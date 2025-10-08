@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cybersecurity Dark Theme */
+    --background: 220 20% 8%;
+    --foreground: 180 100% 90%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 180 100% 90%;
+
+    /* Neon Cyan Primary */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    /* Dark Secondary */
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 180 20% 60%;
+
+    /* Neon Accent */
+    --accent: 280 100% 60%;
+    --accent-foreground: 220 20% 8%;
+
+    /* Red Danger */
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success Green */
+    --success: 120 100% 50%;
+    --success-foreground: 220 20% 8%;
+
+    /* Warning Yellow */
+    --warning: 45 100% 60%;
+    --warning-foreground: 220 20% 8%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Animations */
+    --glow-effect: drop-shadow(0 0 8px hsl(var(--primary) / 0.6));
+    --pulse-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 180 100% 90%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+
+  /* Neon Glow Effect */
+  .neon-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.8),
+                 0 0 20px hsl(var(--primary) / 0.6),
+                 0 0 30px hsl(var(--primary) / 0.4);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.6),
+                inset 0 0 10px hsl(var(--primary) / 0.2);
+  }
+
+  /* Typewriter Animation */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  /* Glitch Effect */
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+
+  /* Confetti Animation */
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall 3s linear infinite;
+    z-index: 9999;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8),
+                  0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Danger Pulse */
+  @keyframes danger-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--destructive) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--destructive) / 0.8),
+                  0 0 30px hsl(var(--destructive) / 0.6);
+    }
+  }
+
+  .animate-danger-pulse {
+    animation: danger-pulse 1s ease-in-out infinite;
+  }
+
+  /* Screen flicker for dramatic moments */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+}
