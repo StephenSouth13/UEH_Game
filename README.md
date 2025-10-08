@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+I. Cốt truyện tổng quát
+Người chơi nhập vai nhân vật giải cứu Linh. Linh đang gặp nguy hiểm do lừa đảo, tống tiền hoặc deepfake. Người chơi sẽ vượt qua các thử thách liên quan đến bảo mật số, phân biệt thông tin giả, và lừa đảo tài chính để tìm ra vị trí Linh và cứu cô an toàn.
+II. Luật chơi – cơ chế thời gian
+Cơ chế thời gian chung
+Tổng thời gian giải cứu Linh: 10 phút (600 giây).
 
-## Project info
 
-**URL**: https://lovable.dev/projects/05b7ec29-313b-47d5-9215-1d932388fcbb
+Trả lời sai:
 
-## How can I edit this code?
 
-There are several ways of editing your application.
+Mỗi lần sai ở bất kỳ level nào → mất 2 phút từ tổng thời gian còn lại.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/05b7ec29-313b-47d5-9215-1d932388fcbb) and start prompting.
+Sau đó người chơi được phép thử lại để tìm đáp án đúng.
 
-Changes made via Lovable will be committed automatically to this repo.
 
-**Use your preferred IDE**
+Game có hiệu ứng cảnh báo: màn hình đỏ, âm thanh báo lỗi, hoặc animation “bẫy thành công”.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Trả lời đúng:
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Không bị trừ thời gian, mở manh mối tiếp theo.
+Áp lực thời gian
+Thời gian chung giảm dần → người chơi phải quyết định nhanh chóng, tạo cảm giác hồi hộp và căng thẳng.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+Nếu hết 10 phút trước khi hoàn thành Level 5 → game over, Linh không được cứu.
+III. Chi tiết các level 
+Level 1: Tin nhắn bí ẩn.
+Người chơi nhận được tin nhắn lừa đảo với đường link đính kèm: “Xem video này để biết Linh an toàn hay không”. Sau đó xuất hiện 4 đường Link, Người chơi phải chọn được đường link thật để không bị hack tài khoản.
+Thử thách: Người chơi phải phân biệt link thật - link giả dựa vào dấu hiệu: domain lạ, QR code mờ ám, font chữ sai.
+Nếu chọn sai: Người chơi bị hack tài khoản ngân hàng, mất thời gian khôi phục → giảm 2p thời gian còn lại.
+Nếu chọn đúng: Mở được bản đồ tầng 1 khách sạn.
+Level 2: Bẫy OTP
+Tình huống: Người chơi nhận email “Ngân hàng thông báo phát hiện giao dịch lạ, cần xác nhận OTP để bảo vệ tài khoản”.
+Thử thách: Người chơi phải phân biệt email thật/giả dựa vào:
+Domain email (vd: support-vcb.com vs vcb.com.vn)
+Lời văn (đe dọa, hối thúc khẩn cấp)
+Link rút gọn/QR code lạ
+Câu hỏi: Nếu lỡ nhập OTP vào link giả, chuyện gì sẽ xảy ra?
+Kết quả:
+Chọn đúng: Mở được bản đồ hành lang khách sạn.
+Chọn sai: Tài khoản bị hack, mất 2 phút game-time để “khôi phục”.
+Level 3: Hợp đồng đầu tư ma
+Tình huống: Người chơi tìm thấy USB trong sảnh, chứa “Hợp đồng đầu tư online” hứa hẹn lợi nhuận 50%/tháng, kèm lời mời “Nếu không đầu tư ngay, sẽ mất cơ hội cứu Linh”.
+Thử thách: Người chơi phải nhận diện đa cấp/đầu tư ảo:
+Cam kết lãi suất phi lý
+Không rõ cơ quan cấp phép
+Yêu cầu nạp tiền nhanh, không kiểm chứng
+Câu hỏi: Đâu là dấu hiệu chắc chắn của lừa đảo tài chính trong hợp đồng này?
+Kết quả:
+Chọn đúng: Giải mã được file, thu được danh sách 3 phòng nghi vấn (301 – 507 – 612).
+Chọn sai: Mất thêm 2 phút → kẻ xấu gửi thêm video deepfake hối thúc gia đình chuyển tiền.
+Level 4: Deepfake & Dấu vết số
+Tình huống: Người chơi đứng trước 3 phòng nghi vấn. Mỗi phòng có “manh mối” gắn với bẫy số:
+Phòng 301: Video Linh cầu cứu qua call → giọng run rẩy, nhưng biểu cảm mắt không khớp (deepfake).
+Phòng 507: Tin nhắn từ số lạ “Tôi thấy Linh trong phòng này, muốn cứu thì chuyển tiền vào ví Momo XXX”.
+Phòng 612: Camera an ninh cho thấy bóng dáng Linh, nhưng file video có watermark giả, metadata bị chỉnh sửa.
+Thử thách: Người chơi phải phân tích manh mối, tìm ra đâu là thật.
+Câu hỏi: Dựa trên kiến thức bảo mật số, đâu là cách kiểm chứng độ thật giả của video/tin nhắn?
+Kết quả:
+Chọn đúng phòng (612): Thu được chìa khóa phòng thật.
+Chọn sai: Rơi vào bẫy deepfake hoặc tin nhắn tống tiền giả → mất thêm 2 phút.
+Level 5: Yêu cầu tiền chuộc
+Tình huống: Trước cửa phòng, kẻ xấu gửi tin cuối: “Chuyển ngay 200 triệu vào tài khoản dưới đây nếu không muốn mất Linh.”
+Thông tin tài khoản: ngân hàng online, tên chủ tài khoản sai chính tả, địa chỉ IP truy cập từ nước ngoài.
+Thử thách: Người chơi phải chọn cách xử lý:
+A. Chuyển tiền ngay để “câu giờ”
+B. Báo công an & ngân hàng để phong tỏa tài khoản
+C. Chia sẻ tin nhắn lên mạng xã hội để nhờ cộng đồng giúp
+Kết quả:
+Chọn B: Giải cứu thành công, công an ập đến, Linh an toàn.
+Chọn A hoặc C: Rơi vào bẫy, kẻ xấu cao chạy xa bay.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/05b7ec29-313b-47d5-9215-1d932388fcbb) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
